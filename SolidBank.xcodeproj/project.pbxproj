@@ -1,0 +1,742 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F8BE9352CCFC0E4001FD055 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8BE9342CCFC0E4001FD055 /* WidgetKit.framework */; };
+		9F8BE9372CCFC0E4001FD055 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8BE9362CCFC0E4001FD055 /* SwiftUI.framework */; };
+		9F8BE9442CCFC0E6001FD055 /* MainWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9F8BE9322CCFC0E4001FD055 /* MainWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F8BE9122CCFBFF3001FD055 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8BE8F92CCFBFF2001FD055 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F8BE9002CCFBFF2001FD055;
+			remoteInfo = SolidBank;
+		};
+		9F8BE91C2CCFBFF4001FD055 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8BE8F92CCFBFF2001FD055 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F8BE9002CCFBFF2001FD055;
+			remoteInfo = SolidBank;
+		};
+		9F8BE9422CCFC0E6001FD055 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8BE8F92CCFBFF2001FD055 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F8BE9312CCFC0E4001FD055;
+			remoteInfo = MainWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9F8BE9492CCFC0E6001FD055 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9F8BE9442CCFC0E6001FD055 /* MainWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		9F8BE9012CCFBFF2001FD055 /* SolidBank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SolidBank.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8BE9112CCFBFF3001FD055 /* SolidBankTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolidBankTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8BE91B2CCFBFF4001FD055 /* SolidBankUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SolidBankUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8BE9322CCFC0E4001FD055 /* MainWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MainWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8BE9342CCFC0E4001FD055 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		9F8BE9362CCFC0E4001FD055 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		9F8BE9452CCFC0E6001FD055 /* Exceptions for "MainWidget" folder in "MainWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9F8BE9312CCFC0E4001FD055 /* MainWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		9F8BE9032CCFBFF2001FD055 /* SolidBank */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SolidBank;
+			sourceTree = "<group>";
+		};
+		9F8BE9142CCFBFF3001FD055 /* SolidBankTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SolidBankTests;
+			sourceTree = "<group>";
+		};
+		9F8BE91E2CCFBFF4001FD055 /* SolidBankUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SolidBankUITests;
+			sourceTree = "<group>";
+		};
+		9F8BE9382CCFC0E4001FD055 /* MainWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9F8BE9452CCFC0E6001FD055 /* Exceptions for "MainWidget" folder in "MainWidgetExtension" target */,
+			);
+			path = MainWidget;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F8BE8FE2CCFBFF2001FD055 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE90E2CCFBFF3001FD055 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE9182CCFBFF4001FD055 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE92F2CCFC0E4001FD055 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F8BE9372CCFC0E4001FD055 /* SwiftUI.framework in Frameworks */,
+				9F8BE9352CCFC0E4001FD055 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F8BE8F82CCFBFF2001FD055 = {
+			isa = PBXGroup;
+			children = (
+				9F8BE9032CCFBFF2001FD055 /* SolidBank */,
+				9F8BE9142CCFBFF3001FD055 /* SolidBankTests */,
+				9F8BE91E2CCFBFF4001FD055 /* SolidBankUITests */,
+				9F8BE9382CCFC0E4001FD055 /* MainWidget */,
+				9F8BE9332CCFC0E4001FD055 /* Frameworks */,
+				9F8BE9022CCFBFF2001FD055 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F8BE9022CCFBFF2001FD055 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F8BE9012CCFBFF2001FD055 /* SolidBank.app */,
+				9F8BE9112CCFBFF3001FD055 /* SolidBankTests.xctest */,
+				9F8BE91B2CCFBFF4001FD055 /* SolidBankUITests.xctest */,
+				9F8BE9322CCFC0E4001FD055 /* MainWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F8BE9332CCFC0E4001FD055 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9F8BE9342CCFC0E4001FD055 /* WidgetKit.framework */,
+				9F8BE9362CCFC0E4001FD055 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F8BE9002CCFBFF2001FD055 /* SolidBank */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F8BE9252CCFBFF4001FD055 /* Build configuration list for PBXNativeTarget "SolidBank" */;
+			buildPhases = (
+				9F8BE8FD2CCFBFF2001FD055 /* Sources */,
+				9F8BE8FE2CCFBFF2001FD055 /* Frameworks */,
+				9F8BE8FF2CCFBFF2001FD055 /* Resources */,
+				9F8BE9492CCFC0E6001FD055 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F8BE9432CCFC0E6001FD055 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9F8BE9032CCFBFF2001FD055 /* SolidBank */,
+			);
+			name = SolidBank;
+			packageProductDependencies = (
+			);
+			productName = SolidBank;
+			productReference = 9F8BE9012CCFBFF2001FD055 /* SolidBank.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F8BE9102CCFBFF3001FD055 /* SolidBankTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F8BE9282CCFBFF4001FD055 /* Build configuration list for PBXNativeTarget "SolidBankTests" */;
+			buildPhases = (
+				9F8BE90D2CCFBFF3001FD055 /* Sources */,
+				9F8BE90E2CCFBFF3001FD055 /* Frameworks */,
+				9F8BE90F2CCFBFF3001FD055 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F8BE9132CCFBFF3001FD055 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9F8BE9142CCFBFF3001FD055 /* SolidBankTests */,
+			);
+			name = SolidBankTests;
+			packageProductDependencies = (
+			);
+			productName = SolidBankTests;
+			productReference = 9F8BE9112CCFBFF3001FD055 /* SolidBankTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9F8BE91A2CCFBFF4001FD055 /* SolidBankUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F8BE92B2CCFBFF4001FD055 /* Build configuration list for PBXNativeTarget "SolidBankUITests" */;
+			buildPhases = (
+				9F8BE9172CCFBFF4001FD055 /* Sources */,
+				9F8BE9182CCFBFF4001FD055 /* Frameworks */,
+				9F8BE9192CCFBFF4001FD055 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F8BE91D2CCFBFF4001FD055 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				9F8BE91E2CCFBFF4001FD055 /* SolidBankUITests */,
+			);
+			name = SolidBankUITests;
+			packageProductDependencies = (
+			);
+			productName = SolidBankUITests;
+			productReference = 9F8BE91B2CCFBFF4001FD055 /* SolidBankUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		9F8BE9312CCFC0E4001FD055 /* MainWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F8BE9462CCFC0E6001FD055 /* Build configuration list for PBXNativeTarget "MainWidgetExtension" */;
+			buildPhases = (
+				9F8BE92E2CCFC0E4001FD055 /* Sources */,
+				9F8BE92F2CCFC0E4001FD055 /* Frameworks */,
+				9F8BE9302CCFC0E4001FD055 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9F8BE9382CCFC0E4001FD055 /* MainWidget */,
+			);
+			name = MainWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = MainWidgetExtension;
+			productReference = 9F8BE9322CCFC0E4001FD055 /* MainWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F8BE8F92CCFBFF2001FD055 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					9F8BE9002CCFBFF2001FD055 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					9F8BE9102CCFBFF3001FD055 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 9F8BE9002CCFBFF2001FD055;
+					};
+					9F8BE91A2CCFBFF4001FD055 = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 9F8BE9002CCFBFF2001FD055;
+					};
+					9F8BE9312CCFC0E4001FD055 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 9F8BE8FC2CCFBFF2001FD055 /* Build configuration list for PBXProject "SolidBank" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F8BE8F82CCFBFF2001FD055;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9F8BE9022CCFBFF2001FD055 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F8BE9002CCFBFF2001FD055 /* SolidBank */,
+				9F8BE9102CCFBFF3001FD055 /* SolidBankTests */,
+				9F8BE91A2CCFBFF4001FD055 /* SolidBankUITests */,
+				9F8BE9312CCFC0E4001FD055 /* MainWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F8BE8FF2CCFBFF2001FD055 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE90F2CCFBFF3001FD055 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE9192CCFBFF4001FD055 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE9302CCFC0E4001FD055 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F8BE8FD2CCFBFF2001FD055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE90D2CCFBFF3001FD055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE9172CCFBFF4001FD055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F8BE92E2CCFC0E4001FD055 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F8BE9132CCFBFF3001FD055 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F8BE9002CCFBFF2001FD055 /* SolidBank */;
+			targetProxy = 9F8BE9122CCFBFF3001FD055 /* PBXContainerItemProxy */;
+		};
+		9F8BE91D2CCFBFF4001FD055 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F8BE9002CCFBFF2001FD055 /* SolidBank */;
+			targetProxy = 9F8BE91C2CCFBFF4001FD055 /* PBXContainerItemProxy */;
+		};
+		9F8BE9432CCFC0E6001FD055 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F8BE9312CCFC0E4001FD055 /* MainWidgetExtension */;
+			targetProxy = 9F8BE9422CCFC0E6001FD055 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		9F8BE9232CCFBFF4001FD055 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9F8BE9242CCFBFF4001FD055 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F8BE9262CCFBFF4001FD055 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SolidBank/Preview Content\"";
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F8BE9272CCFBFF4001FD055 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SolidBank/Preview Content\"";
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBank;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9F8BE9292CCFBFF4001FD055 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolidBank.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SolidBank";
+			};
+			name = Debug;
+		};
+		9F8BE92A2CCFBFF4001FD055 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBankTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SolidBank.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SolidBank";
+			};
+			name = Release;
+		};
+		9F8BE92C2CCFBFF4001FD055 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SolidBank;
+			};
+			name = Debug;
+		};
+		9F8BE92D2CCFBFF4001FD055 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBankUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SolidBank;
+			};
+			name = Release;
+		};
+		9F8BE9472CCFC0E6001FD055 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MainWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MainWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBank.MainWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F8BE9482CCFC0E6001FD055 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MainWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MainWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBank.MainWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F8BE8FC2CCFBFF2001FD055 /* Build configuration list for PBXProject "SolidBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8BE9232CCFBFF4001FD055 /* Debug */,
+				9F8BE9242CCFBFF4001FD055 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F8BE9252CCFBFF4001FD055 /* Build configuration list for PBXNativeTarget "SolidBank" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8BE9262CCFBFF4001FD055 /* Debug */,
+				9F8BE9272CCFBFF4001FD055 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F8BE9282CCFBFF4001FD055 /* Build configuration list for PBXNativeTarget "SolidBankTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8BE9292CCFBFF4001FD055 /* Debug */,
+				9F8BE92A2CCFBFF4001FD055 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F8BE92B2CCFBFF4001FD055 /* Build configuration list for PBXNativeTarget "SolidBankUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8BE92C2CCFBFF4001FD055 /* Debug */,
+				9F8BE92D2CCFBFF4001FD055 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F8BE9462CCFC0E6001FD055 /* Build configuration list for PBXNativeTarget "MainWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F8BE9472CCFC0E6001FD055 /* Debug */,
+				9F8BE9482CCFC0E6001FD055 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F8BE8F92CCFBFF2001FD055 /* Project object */;
+}
