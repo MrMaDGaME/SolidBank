@@ -9,11 +9,18 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
+        VStack(spacing: 10.0) {
+            Image(.logo)
+                .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
+                .aspectRatio(contentMode: .fit)
+                .imageScale(.small)
                 .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Text("SolidBank")
+                .font(.largeTitle)
+                .fontWeight(.heavy)
+                .foregroundColor(Color.green)
+                
+                
         }
         .padding()
     }

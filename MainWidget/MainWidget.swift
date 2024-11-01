@@ -48,11 +48,8 @@ struct MainWidgetEntryView : View {
 
     var body: some View {
         VStack {
-            Text("Time:")
-            Text(entry.date, style: .time)
-
-            Text("Emoji:")
-            Text(entry.emoji)
+            Text("Solde:")
+            Text(String(0) + " $")
         }
     }
 }
