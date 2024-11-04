@@ -47,17 +47,24 @@ struct MainWidgetEntryView : View {
     var entry: Provider.Entry
     
     // Fetch balance directly in the view
-    private var balance: Int {
+    private var balance: String {
         let sharedDefaults = UserDefaults(suiteName: "group.com.solidbank")
-        let value = sharedDefaults?.integer(forKey: "sharedValueKey") ?? 0
-        print("Widget read balance: \(value)") // Add this line to confirm the read
-        return value
+        let value = sharedDefaults?.double(forKey: "sharedValueKey") ?? 0
+
+        // Use NumberFormatter to format with up to two decimal places
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 2
+
+        return formatter.string(from: NSNumber(value: value)) ?? "0"
     }
+
 
 
      var body: some View {
          VStack {
-             Text("Solde:")
+             Text("Solde actuel:")
              Text("\(balance) $") // Display the fetched balance
                  .font(.title)
                  .fontWeight(.bold)
