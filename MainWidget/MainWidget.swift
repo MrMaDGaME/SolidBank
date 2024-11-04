@@ -45,15 +45,26 @@ struct SimpleEntry: TimelineEntry {
 
 struct MainWidgetEntryView : View {
     var entry: Provider.Entry
-
-    var body: some View {
-        VStack {
-            Text("Solde:")
-            Text(String(0) + " $")
-        }
+    
+    // Fetch balance directly in the view
+    private var balance: Int {
+        let sharedDefaults = UserDefaults(suiteName: "group.com.solidbank")
+        let value = sharedDefaults?.integer(forKey: "sharedValueKey") ?? 0
+        print("Widget read balance: \(value)") // Add this line to confirm the read
+        return value
     }
-}
 
+
+     var body: some View {
+         VStack {
+             Text("Solde:")
+             Text("\(balance) $") // Display the fetched balance
+                 .font(.title)
+                 .fontWeight(.bold)
+         }
+         .padding()
+     }
+ }
 struct MainWidget: Widget {
     let kind: String = "MainWidget"
 
