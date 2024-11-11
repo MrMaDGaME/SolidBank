@@ -8,59 +8,57 @@ import WidgetKit
 import SwiftUI
 
 struct ContentView: View {
-    @State private var sharedValue: Float = 0
-    // Float formatter to handle decimal inputs
-    private var floatFormatter: NumberFormatter {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
-        return formatter
-    }
+    @StateObject private var viewModel = AccountViewModel()
+    @State private var accountName: String = ""
+    @State private var showDeleteConfirmation: Bool = false
+    @State private var accountToDelete: IndexSet?
 
     var body: some View {
-        
-        VStack(spacing: 10.0) {
-            Image(.logo)
-                .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
-                .aspectRatio(contentMode: .fit)
-                .imageScale(.small)
-                .foregroundStyle(.tint)
-            Text("SolidBank")
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .foregroundColor(Color.black)
-            HStack {
-                            TextField("Entrez une valeur", value: $sharedValue, formatter: floatFormatter)
-                                .keyboardType(.decimalPad)  // Use decimal pad for float input
-                                .onSubmit {  // Save to UserDefaults when editing completes
-                                    let sharedDefaults = UserDefaults(suiteName: "group.com.solidbank")
-                                    sharedDefaults?.set(sharedValue, forKey: "sharedValueKey")
-                                }
-                                .padding(8)
-
-                            Text("$")
-                                .foregroundColor(.gray)
-                                .padding(.trailing, 4)
+        NavigationView {
+            VStack {
+                TextField("Nom du compte", text: $accountName)
+                Button("Ajouter un compte") {
+                    if !accountName.isEmpty {
+                        viewModel.addAccount(name: accountName)
+                        accountName = ""
+                    }
+                }
+                
+                List {
+                    ForEach(viewModel.accounts) { account in
+                        VStack(alignment: .leading) {
+                            Text(account.name)
+                                .font(.headline)
+                            Text("Solde: $\(account.balance, specifier: "%.2f")")
+                                .font(.subheadline)
                         }
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.gray, lineWidth: 1)
-                        )
-                        .padding()
-
-                  
-
-                        Button("Enregistrer") {
-                            if let sharedDefaults = UserDefaults(suiteName: "group.com.solidbank") {
-                                sharedDefaults.set(sharedValue, forKey: "sharedValueKey")
-                                WidgetCenter.shared.reloadAllTimelines()
+                    }
+                    .onDelete { indexSet in
+                        accountToDelete = indexSet
+                        showDeleteConfirmation = true
+                    }
+                }
+                .alert(isPresented: $showDeleteConfirmation) {
+                    Alert(
+                        title: Text("Supprimer le compte"),
+                        message: Text("Êtes-vous sûr de vouloir supprimer ce compte ?"),
+                        primaryButton: .destructive(Text("Supprimer")) {
+                            if let indexSet = accountToDelete {
+                                viewModel.deleteAccount(at: indexSet)
                             }
-                        }
-        
-
+                        },
+                        secondaryButton: .cancel()
+                    )
+                }
+                
+                Divider()
+                NavigationLink("Ajouter des fonds", destination: AddFundsView(viewModel: viewModel))
+                NavigationLink("Virement entre comptes", destination: TransferView(viewModel: viewModel))
+                NavigationLink("Effectuer un paiement", destination: PaymentView(viewModel: viewModel))
+            }
+            .padding()
+            .navigationTitle("Gestion de Comptes Bancaires")
         }
-        .padding()
     }
 }
 

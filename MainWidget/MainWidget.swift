@@ -95,5 +95,4 @@ struct MainWidget: Widget {
     MainWidget()
 } timeline: {
     SimpleEntry(date: .now, emoji: "😀")
-    SimpleEntry(date: .now, emoji: "🤩")
 }
