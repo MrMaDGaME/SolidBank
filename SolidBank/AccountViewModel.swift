@@ -55,12 +55,12 @@ class AccountViewModel: ObservableObject {
 
     private func saveAccounts() {
         if let encoded = try? JSONEncoder().encode(accounts) {
-            UserDefaults.standard.set(encoded, forKey: "accounts")
+            UserDefaults(suiteName: "group.com.solidbank")?.set(encoded, forKey: "accounts")
         }
     }
 
     private func loadAccounts() {
-        if let savedAccounts = UserDefaults.standard.data(forKey: "accounts"),
+        if let savedAccounts = UserDefaults(suiteName: "group.com.solidbank")?.data(forKey: "accounts"),
            let decoded = try? JSONDecoder().decode([Account].self, from: savedAccounts) {
             accounts = decoded
         }

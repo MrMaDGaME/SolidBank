@@ -12,6 +12,9 @@
 		9F8BE9352CCFC0E4001FD055 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8BE9342CCFC0E4001FD055 /* WidgetKit.framework */; };
 		9F8BE9372CCFC0E4001FD055 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8BE9362CCFC0E4001FD055 /* SwiftUI.framework */; };
 		9F8BE9442CCFC0E6001FD055 /* MainWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9F8BE9322CCFC0E4001FD055 /* MainWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		9FC71DA82CE2A2F8006C9ED5 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8BE9342CCFC0E4001FD055 /* WidgetKit.framework */; };
+		9FC71DA92CE2A2F8006C9ED5 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F8BE9362CCFC0E4001FD055 /* SwiftUI.framework */; };
+		9FC71DB82CE2A2F9006C9ED5 /* BankWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 9FC71DA72CE2A2F8006C9ED5 /* BankWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,13 @@
 			remoteGlobalIDString = 9F8BE9312CCFC0E4001FD055;
 			remoteInfo = MainWidgetExtension;
 		};
+		9FC71DB62CE2A2F9006C9ED5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F8BE8F92CCFBFF2001FD055 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9FC71DA62CE2A2F8006C9ED5;
+			remoteInfo = BankWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,6 +55,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				9FC71DB82CE2A2F9006C9ED5 /* BankWidgetExtension.appex in Embed Foundation Extensions */,
 				9F8BE9442CCFC0E6001FD055 /* MainWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
@@ -62,21 +73,33 @@
 		9F8BE9322CCFC0E4001FD055 /* MainWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MainWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F8BE9342CCFC0E4001FD055 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		9F8BE9362CCFC0E4001FD055 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		9FC71DA72CE2A2F8006C9ED5 /* BankWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BankWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9FC71DBD2CE2A37D006C9ED5 /* BankWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BankWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		9F8BE9452CCFC0E6001FD055 /* Exceptions for "MainWidget" folder in "MainWidgetExtension" target */ = {
+		9FC71DB92CE2A2F9006C9ED5 /* Exceptions for "BankWidget" folder in "BankWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = 9F8BE9312CCFC0E4001FD055 /* MainWidgetExtension */;
+			target = 9FC71DA62CE2A2F8006C9ED5 /* BankWidgetExtension */;
+		};
+		9FC71DBF2CE2A782006C9ED5 /* Exceptions for "SolidBank" folder in "BankWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Account.swift,
+			);
+			target = 9FC71DA62CE2A2F8006C9ED5 /* BankWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9F8BE9032CCFBFF2001FD055 /* SolidBank */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				9FC71DBF2CE2A782006C9ED5 /* Exceptions for "SolidBank" folder in "BankWidgetExtension" target */,
+			);
 			path = SolidBank;
 			sourceTree = "<group>";
 		};
@@ -90,12 +113,12 @@
 			path = SolidBankUITests;
 			sourceTree = "<group>";
 		};
-		9F8BE9382CCFC0E4001FD055 /* MainWidget */ = {
+		9FC71DAA2CE2A2F8006C9ED5 /* BankWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				9F8BE9452CCFC0E6001FD055 /* Exceptions for "MainWidget" folder in "MainWidgetExtension" target */,
+				9FC71DB92CE2A2F9006C9ED5 /* Exceptions for "BankWidget" folder in "BankWidgetExtension" target */,
 			);
-			path = MainWidget;
+			path = BankWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -131,19 +154,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FC71DA42CE2A2F8006C9ED5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FC71DA92CE2A2F8006C9ED5 /* SwiftUI.framework in Frameworks */,
+				9FC71DA82CE2A2F8006C9ED5 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		9F8BE8F82CCFBFF2001FD055 = {
 			isa = PBXGroup;
 			children = (
+				9FC71DBD2CE2A37D006C9ED5 /* BankWidgetExtension.entitlements */,
 				52F4C8B42CD87655003B7BEF /* MainWidgetExtension.entitlements */,
 				9F2979DD2CD85F0A00031F26 /* README.md */,
 				9F2979DF2CD85F2E00031F26 /* .gitignore */,
 				9F8BE9032CCFBFF2001FD055 /* SolidBank */,
 				9F8BE9142CCFBFF3001FD055 /* SolidBankTests */,
 				9F8BE91E2CCFBFF4001FD055 /* SolidBankUITests */,
-				9F8BE9382CCFC0E4001FD055 /* MainWidget */,
+				9FC71DAA2CE2A2F8006C9ED5 /* BankWidget */,
 				9F8BE9332CCFC0E4001FD055 /* Frameworks */,
 				9F8BE9022CCFBFF2001FD055 /* Products */,
 			);
@@ -156,6 +189,7 @@
 				9F8BE9112CCFBFF3001FD055 /* SolidBankTests.xctest */,
 				9F8BE91B2CCFBFF4001FD055 /* SolidBankUITests.xctest */,
 				9F8BE9322CCFC0E4001FD055 /* MainWidgetExtension.appex */,
+				9FC71DA72CE2A2F8006C9ED5 /* BankWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -185,6 +219,7 @@
 			);
 			dependencies = (
 				9F8BE9432CCFC0E6001FD055 /* PBXTargetDependency */,
+				9FC71DB72CE2A2F9006C9ED5 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				9F8BE9032CCFBFF2001FD055 /* SolidBank */,
@@ -254,14 +289,33 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				9F8BE9382CCFC0E4001FD055 /* MainWidget */,
-			);
 			name = MainWidgetExtension;
 			packageProductDependencies = (
 			);
 			productName = MainWidgetExtension;
 			productReference = 9F8BE9322CCFC0E4001FD055 /* MainWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		9FC71DA62CE2A2F8006C9ED5 /* BankWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9FC71DBA2CE2A2F9006C9ED5 /* Build configuration list for PBXNativeTarget "BankWidgetExtension" */;
+			buildPhases = (
+				9FC71DA32CE2A2F8006C9ED5 /* Sources */,
+				9FC71DA42CE2A2F8006C9ED5 /* Frameworks */,
+				9FC71DA52CE2A2F8006C9ED5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				9FC71DAA2CE2A2F8006C9ED5 /* BankWidget */,
+			);
+			name = BankWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = BankWidgetExtension;
+			productReference = 9FC71DA72CE2A2F8006C9ED5 /* BankWidgetExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -288,6 +342,9 @@
 					9F8BE9312CCFC0E4001FD055 = {
 						CreatedOnToolsVersion = 16.0;
 					};
+					9FC71DA62CE2A2F8006C9ED5 = {
+						CreatedOnToolsVersion = 16.1;
+					};
 				};
 			};
 			buildConfigurationList = 9F8BE8FC2CCFBFF2001FD055 /* Build configuration list for PBXProject "SolidBank" */;
@@ -308,6 +365,7 @@
 				9F8BE9102CCFBFF3001FD055 /* SolidBankTests */,
 				9F8BE91A2CCFBFF4001FD055 /* SolidBankUITests */,
 				9F8BE9312CCFC0E4001FD055 /* MainWidgetExtension */,
+				9FC71DA62CE2A2F8006C9ED5 /* BankWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -337,6 +395,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		9F8BE9302CCFC0E4001FD055 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9FC71DA52CE2A2F8006C9ED5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,6 +439,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9FC71DA32CE2A2F8006C9ED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -391,6 +463,11 @@
 			isa = PBXTargetDependency;
 			target = 9F8BE9312CCFC0E4001FD055 /* MainWidgetExtension */;
 			targetProxy = 9F8BE9422CCFC0E6001FD055 /* PBXContainerItemProxy */;
+		};
+		9FC71DB72CE2A2F9006C9ED5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9FC71DA62CE2A2F8006C9ED5 /* BankWidgetExtension */;
+			targetProxy = 9FC71DB62CE2A2F9006C9ED5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -702,6 +779,64 @@
 			};
 			name = Release;
 		};
+		9FC71DBB2CE2A2F9006C9ED5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BankWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BankWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BankWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBank.BankWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9FC71DBC2CE2A2F9006C9ED5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = BankWidgetExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6CL8WWVX84;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BankWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = BankWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = mducrot.SolidBank.BankWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -746,6 +881,15 @@
 			buildConfigurations = (
 				9F8BE9472CCFC0E6001FD055 /* Debug */,
 				9F8BE9482CCFC0E6001FD055 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9FC71DBA2CE2A2F9006C9ED5 /* Build configuration list for PBXNativeTarget "BankWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9FC71DBB2CE2A2F9006C9ED5 /* Debug */,
+				9FC71DBC2CE2A2F9006C9ED5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
