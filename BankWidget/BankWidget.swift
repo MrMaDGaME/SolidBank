@@ -9,6 +9,27 @@ import WidgetKit
 import SwiftUI
 import AppIntents
 
+struct AccountEntry: TimelineEntry {
+    let date: Date
+    let widgetAccount: WidgetAccount
+}
+
+struct AccountTimeline: AppIntentTimelineProvider {
+    func timeline(for configuration: SelectAccountIntent, in context: Context) async -> Timeline<AccountEntry> {
+        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
+        return Timeline(entries: [AccountEntry(date: .now, widgetAccount: account)], policy: .never)
+    }
+    
+    func snapshot(for configuration: SelectAccountIntent, in context: Context) async -> AccountEntry {
+        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
+        return AccountEntry(date: .now, widgetAccount: account)
+    }
+    
+    func placeholder(in context: Context) -> AccountEntry {
+        AccountEntry(date: .now, widgetAccount: WidgetAccount.allAccounts.first!)
+    }
+}
+
 struct WidgetAccount: AppEntity {
     var id: String
     var account: Account
@@ -48,7 +69,6 @@ struct WidgetAccount: AppEntity {
     }
 }
 
-
 struct WidgetAccountQuery: EntityQuery {
     func entities(for identifiers: [WidgetAccount.ID]) async throws -> [WidgetAccount] {
         WidgetAccount.allAccounts.filter{
@@ -65,36 +85,6 @@ struct WidgetAccountQuery: EntityQuery {
     }
 }
 
-struct SelectAccountIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource = "Modifier compte"
-    static var description: IntentDescription = IntentDescription("Description")
-    
-    @Parameter(title: "Selected account")
-    var selectedAccount: WidgetAccount?
-}
-
-struct AccountTimeline: AppIntentTimelineProvider {
-    func timeline(for configuration: SelectAccountIntent, in context: Context) async -> Timeline<AccountEntry> {
-        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
-        return Timeline(entries: [AccountEntry(date: .now, widgetAccount: account)], policy: .never)
-    }
-    
-    func snapshot(for configuration: SelectAccountIntent, in context: Context) async -> AccountEntry {
-        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
-        return AccountEntry(date: .now, widgetAccount: account)
-    }
-    
-    func placeholder(in context: Context) -> AccountEntry {
-        AccountEntry(date: .now, widgetAccount: WidgetAccount.allAccounts.first!)
-    }
-}
-
-
-struct AccountEntry: TimelineEntry {
-    let date: Date
-    let widgetAccount: WidgetAccount
-}
-
 struct AccountWidgetView: View {
     let entry: AccountEntry
 
@@ -103,14 +93,12 @@ struct AccountWidgetView: View {
             VStack {
                 Text("Solde: \(String(format: "%.2f", entry.widgetAccount.account.balance))$")
                     .font(.headline)
-                    .foregroundColor(.black)
                     .padding(.bottom, 4)
                     
 
                 // Display account name
                 Text(entry.widgetAccount.account.name)
                     .font(.subheadline)
-                    .foregroundColor(.black)
             }
             .padding()
         }
