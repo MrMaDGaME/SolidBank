@@ -90,32 +90,26 @@ struct AccountWidgetView: View {
     @Environment(\.widgetFamily) var widgetFamily
 
     var body: some View {
-        VStack {
-                switch widgetFamily{
-                case .systemSmall:
-                    VStack {
-                        Text(entry.widgetAccount.account.name)
-                            .font(.headline)
-                            Text("Solde: $\(entry.widgetAccount.account.balance, specifier: "%.2f")")
-                                .font(.subheadline)
-                    }
-                    .padding()
-                case .systemMedium:
-                    HStack {
-                        Text(entry.widgetAccount.account.name)
-                            .font(.largeTitle)
-                            Text(" : $\(entry.widgetAccount.account.balance, specifier: "%.2f")")
-                            .font(.title)
-                    }
-                    .padding()
-                default:
-                    Text("Non supporté")
-                }
-                
-            
+        switch widgetFamily {
+        case .systemSmall:
+            VStack {
+                Text(entry.widgetAccount.account.name)
+                    .font(.headline)
+                Text("Solde: $\(entry.widgetAccount.account.balance, specifier: "%.2f")")
+                    .font(.subheadline)
             }
-            .containerBackground(for: .widget) {
-                Color.clear
+            .padding()
+        case .systemMedium:
+            HStack {
+                Text(entry.widgetAccount.account.name)
+                    .font(.largeTitle)
+                Text(" : $\(entry.widgetAccount.account.balance, specifier: "%.2f")")
+                    .font(.title)
+            }
+            .padding()
+        default:
+            Text("Non supporté")
+                .padding()
         }
     }
 }
@@ -124,13 +118,19 @@ struct BankWidget: Widget {
     let kind: String = "BankWidget"
 
     var body: some WidgetConfiguration {
-        AppIntentConfiguration(kind: "AccountWidget", intent: SelectAccountIntent.self, provider: AccountTimeline()) {
-            entry in AccountWidgetView(entry: entry)
+        AppIntentConfiguration(kind: kind, intent: SelectAccountIntent.self, provider: AccountTimeline()) { entry in
+            if #available(iOS 17.0, *) {
+                AccountWidgetView(entry: entry)
+                    .containerBackground(.fill.tertiary, for: .widget)
+            } else {
+                AccountWidgetView(entry: entry)
+                    .padding()
+                    .background()
+            }
         }
-        .configurationDisplayName("Modify Widget")
-        .description("Choose Account")
+        .configurationDisplayName("Liste de soldes")
+        .description("Affiche la liste et le solde de tous le comptes.")
         .supportedFamilies([.systemSmall, .systemMedium])
-        .contentMarginsDisabled()
     }
 }
 

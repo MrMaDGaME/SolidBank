@@ -93,6 +93,13 @@
 			);
 			target = 9F5F29A52CF90181002EE151 /* AllAccountsWidgetExtension */;
 		};
+		9F5F29C42CF91339002EE151 /* Exceptions for "SolidBank" folder in "SolidBank" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 9F8BE9002CCFBFF2001FD055 /* SolidBank */;
+		};
 		9FC71DB92CE2A2F9006C9ED5 /* Exceptions for "BankWidget" folder in "BankWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -121,6 +128,7 @@
 		9F8BE9032CCFBFF2001FD055 /* SolidBank */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				9F5F29C42CF91339002EE151 /* Exceptions for "SolidBank" folder in "SolidBank" target */,
 				9FC71DBF2CE2A782006C9ED5 /* Exceptions for "SolidBank" folder in "BankWidgetExtension" target */,
 				9F5F29BD2CF902E7002EE151 /* Exceptions for "SolidBank" folder in "AllAccountsWidgetExtension" target */,
 			);
@@ -690,6 +698,7 @@
 				DEVELOPMENT_TEAM = 6CL8WWVX84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SolidBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -720,6 +729,7 @@
 				DEVELOPMENT_TEAM = 6CL8WWVX84;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SolidBank/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

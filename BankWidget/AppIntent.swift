@@ -10,8 +10,8 @@ import AppIntents
 
 struct SelectAccountIntent: WidgetConfigurationIntent {
     static var title: LocalizedStringResource = "Modifier compte"
-    static var description: IntentDescription = IntentDescription("Description")
-    
-    @Parameter(title: "Selected account")
+    static var description: IntentDescription = IntentDescription("Sélectionnez le compte que vous voulez afficher dans le widget.")
+
+    @Parameter(title: "Compte sélectionné")
     var selectedAccount: WidgetAccount?
 }
