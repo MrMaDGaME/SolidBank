@@ -5,7 +5,7 @@
 //  Created by Mathéo Ducrot on 11/11/2024.
 //
 
-
+import WidgetKit
 import Foundation
 
 class AccountViewModel: ObservableObject {
@@ -57,6 +57,8 @@ class AccountViewModel: ObservableObject {
         if let encoded = try? JSONEncoder().encode(accounts) {
             UserDefaults(suiteName: "group.com.solidbank")?.set(encoded, forKey: "accounts")
         }
+        
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     private func loadAccounts() {
