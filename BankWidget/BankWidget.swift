@@ -85,49 +85,37 @@ struct WidgetAccountQuery: EntityQuery {
     }
 }
 
-
-struct AccountTimeline: AppIntentTimelineProvider {
-    func timeline(for configuration: SelectAccountIntent, in context: Context) async -> Timeline<AccountEntry> {
-        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
-        return Timeline(entries: [AccountEntry(date: .now, widgetAccount: account)], policy: .never)
-    }
-    
-    func snapshot(for configuration: SelectAccountIntent, in context: Context) async -> AccountEntry {
-        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
-        return AccountEntry(date: .now, widgetAccount: account)
-    }
-    
-    func placeholder(in context: Context) -> AccountEntry {
-        AccountEntry(date: .now,
-                     accounts: [WidgetAccount(id:1, account:(name: "Compte Exemple", balance: 100.0)))
-    }
-}
-
-
-struct AccountEntry: TimelineEntry {
-    let date: Date
-    let widgetAccounts: [WidgetAccount]
-}
-
 struct AccountWidgetView: View {
     let entry: AccountEntry
+    @Environment(\.widgetFamily) var widgetFamily
 
     var body: some View {
-        ZStack {
-            VStack {
-                Text("Solde: \(String(format: "%.2f", entry.widgetAccount.account.balance))$")
-                    .font(.headline)
-                    .padding(.bottom, 4)
-                    
-
-                // Display account name
-                Text(entry.widgetAccount.account.name)
-                    .font(.subheadline)
+        VStack {
+                switch widgetFamily{
+                case .systemSmall:
+                    VStack {
+                        Text(entry.widgetAccount.account.name)
+                            .font(.headline)
+                            Text("Solde: $\(entry.widgetAccount.account.balance, specifier: "%.2f")")
+                                .font(.subheadline)
+                    }
+                    .padding()
+                case .systemMedium:
+                    HStack {
+                        Text(entry.widgetAccount.account.name)
+                            .font(.largeTitle)
+                            Text(" : $\(entry.widgetAccount.account.balance, specifier: "%.2f")")
+                            .font(.title)
+                    }
+                    .padding()
+                default:
+                    Text("Non supporté")
+                }
+                
+            
             }
-            .padding()
-        }
-        .containerBackground(for: .widget) {
-            Color.clear
+            .containerBackground(for: .widget) {
+                Color.clear
         }
     }
 }
@@ -141,7 +129,7 @@ struct BankWidget: Widget {
         }
         .configurationDisplayName("Modify Widget")
         .description("Choose Account")
-        .supportedFamilies([.systemSmall])
+        .supportedFamilies([.systemSmall, .systemMedium])
         .contentMarginsDisabled()
     }
 }
