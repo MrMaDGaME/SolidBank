@@ -9,6 +9,27 @@ import WidgetKit
 import SwiftUI
 import AppIntents
 
+struct AccountEntry: TimelineEntry {
+    let date: Date
+    let widgetAccount: WidgetAccount
+}
+
+struct AccountTimeline: AppIntentTimelineProvider {
+    func timeline(for configuration: SelectAccountIntent, in context: Context) async -> Timeline<AccountEntry> {
+        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
+        return Timeline(entries: [AccountEntry(date: .now, widgetAccount: account)], policy: .never)
+    }
+    
+    func snapshot(for configuration: SelectAccountIntent, in context: Context) async -> AccountEntry {
+        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
+        return AccountEntry(date: .now, widgetAccount: account)
+    }
+    
+    func placeholder(in context: Context) -> AccountEntry {
+        AccountEntry(date: .now, widgetAccount: WidgetAccount.allAccounts.first!)
+    }
+}
+
 struct WidgetAccount: AppEntity {
     var id: String
     var account: Account
@@ -47,7 +68,6 @@ struct WidgetAccount: AppEntity {
         }
     }
 }
-
 
 struct WidgetAccountQuery: EntityQuery {
     func entities(for identifiers: [WidgetAccount.ID]) async throws -> [WidgetAccount] {
