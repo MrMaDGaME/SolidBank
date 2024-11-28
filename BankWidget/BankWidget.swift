@@ -65,13 +65,6 @@ struct WidgetAccountQuery: EntityQuery {
     }
 }
 
-struct SelectAccountIntent: WidgetConfigurationIntent {
-    static var title: LocalizedStringResource = "Modifier compte"
-    static var description: IntentDescription = IntentDescription("Description")
-    
-    @Parameter(title: "Selected account")
-    var selectedAccount: WidgetAccount?
-}
 
 struct AccountTimeline: AppIntentTimelineProvider {
     func timeline(for configuration: SelectAccountIntent, in context: Context) async -> Timeline<AccountEntry> {
@@ -85,14 +78,15 @@ struct AccountTimeline: AppIntentTimelineProvider {
     }
     
     func placeholder(in context: Context) -> AccountEntry {
-        AccountEntry(date: .now, widgetAccount: WidgetAccount.allAccounts.first!)
+        AccountEntry(date: .now,
+                     accounts: [WidgetAccount(id:1, account:(name: "Compte Exemple", balance: 100.0)))
     }
 }
 
 
 struct AccountEntry: TimelineEntry {
     let date: Date
-    let widgetAccount: WidgetAccount
+    let widgetAccounts: [WidgetAccount]
 }
 
 struct AccountWidgetView: View {
@@ -103,14 +97,12 @@ struct AccountWidgetView: View {
             VStack {
                 Text("Solde: \(String(format: "%.2f", entry.widgetAccount.account.balance))$")
                     .font(.headline)
-                    .foregroundColor(.black)
                     .padding(.bottom, 4)
                     
 
                 // Display account name
                 Text(entry.widgetAccount.account.name)
                     .font(.subheadline)
-                    .foregroundColor(.black)
             }
             .padding()
         }
