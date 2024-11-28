@@ -128,8 +128,8 @@ struct BankWidget: Widget {
                     .background()
             }
         }
-        .configurationDisplayName("Liste de soldes")
-        .description("Affiche la liste et le solde de tous le comptes.")
+        .configurationDisplayName("Solde d'un compte")
+        .description("Affiche le solde d'un compte.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
 }

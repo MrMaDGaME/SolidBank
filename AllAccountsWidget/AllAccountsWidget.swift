@@ -82,7 +82,7 @@ struct AllAccountsWidget: Widget {
             }
         }
         .configurationDisplayName("Liste de soldes")
-        .description("Affiche la liste et le solde de tous le comptes.")
+        .description("Affiche la liste et le solde de 6 comptes max.")
         .supportedFamilies([.systemLarge])
     }
 }
