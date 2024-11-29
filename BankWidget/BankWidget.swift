@@ -11,22 +11,21 @@ import AppIntents
 
 struct AccountEntry: TimelineEntry {
     let date: Date
-    let widgetAccount: WidgetAccount
+    let widgetAccount: WidgetAccount?
 }
 
 struct AccountTimeline: AppIntentTimelineProvider {
     func timeline(for configuration: SelectAccountIntent, in context: Context) async -> Timeline<AccountEntry> {
-        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
+        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts().first
         return Timeline(entries: [AccountEntry(date: .now, widgetAccount: account)], policy: .never)
     }
     
     func snapshot(for configuration: SelectAccountIntent, in context: Context) async -> AccountEntry {
-        let account = configuration.selectedAccount ?? WidgetAccount.allAccounts.first!
-        return AccountEntry(date: .now, widgetAccount: account)
+        return AccountEntry(date: .now, widgetAccount: WidgetAccount(id: "0", account: Account(name: "Compte Exemple", balance: 1000)))
     }
     
     func placeholder(in context: Context) -> AccountEntry {
-        AccountEntry(date: .now, widgetAccount: WidgetAccount.allAccounts.first!)
+        AccountEntry(date: .now, widgetAccount: WidgetAccount(id: "0", account: Account(name: "Compte Exemple", balance: 1000)))
     }
 }
 
@@ -46,9 +45,9 @@ struct WidgetAccount: AppEntity {
     }
     let accountsData = UserDefaults(suiteName: "group.com.solidbank")?.data(forKey: "accounts")
     
-    static let allAccounts: [WidgetAccount] = {
+    static func allAccounts() -> [WidgetAccount] {
         return WidgetAccount.loadAccountsFromUserDefaults()
-    }()
+    }
     
     static func loadAccountsFromUserDefaults() -> [WidgetAccount] {
         guard let data = UserDefaults(suiteName: "group.com.solidbank")?.data(forKey: "accounts") else {
@@ -71,17 +70,17 @@ struct WidgetAccount: AppEntity {
 
 struct WidgetAccountQuery: EntityQuery {
     func entities(for identifiers: [WidgetAccount.ID]) async throws -> [WidgetAccount] {
-        WidgetAccount.allAccounts.filter{
+        WidgetAccount.allAccounts().filter{
             identifiers.contains($0.id)
         }
     }
     
     func suggestedEntities() async throws -> [WidgetAccount] {
-        WidgetAccount.allAccounts
+        WidgetAccount.allAccounts()
     }
     
     func defaultResult() async -> WidgetAccount? {
-        WidgetAccount.allAccounts.first
+        WidgetAccount.allAccounts().first
     }
 }
 
@@ -90,26 +89,30 @@ struct AccountWidgetView: View {
     @Environment(\.widgetFamily) var widgetFamily
 
     var body: some View {
-        switch widgetFamily {
-        case .systemSmall:
-            VStack {
-                Text(entry.widgetAccount.account.name)
-                    .font(.headline)
-                Text("Solde: $\(entry.widgetAccount.account.balance, specifier: "%.2f")")
-                    .font(.subheadline)
-            }
-            .padding()
-        case .systemMedium:
-            HStack {
-                Text(entry.widgetAccount.account.name)
-                    .font(.largeTitle)
-                Text(" : $\(entry.widgetAccount.account.balance, specifier: "%.2f")")
-                    .font(.title)
-            }
-            .padding()
-        default:
-            Text("Non supporté")
+        if (entry.widgetAccount) == nil {
+            Text("Aucun compte associé").padding()
+        } else {
+            switch widgetFamily {
+            case .systemSmall:
+                VStack {
+                    Text(entry.widgetAccount!.account.name)
+                        .font(.headline)
+                    Text("Solde: \(entry.widgetAccount!.account.balance, specifier: "%.2f") $")
+                        .font(.subheadline)
+                }
                 .padding()
+            case .systemMedium:
+                HStack {
+                    Text(entry.widgetAccount!.account.name)
+                        .font(.largeTitle)
+                    Text(" : \(entry.widgetAccount!.account.balance, specifier: "%.2f") $")
+                        .font(.title)
+                }
+                .padding()
+            default:
+                Text("Non supporté")
+                    .padding()
+            }
         }
     }
 }
@@ -137,5 +140,6 @@ struct BankWidget: Widget {
 #Preview(as: .systemSmall) {
     BankWidget()
 } timeline: {
-    AccountEntry(date: .now, widgetAccount: WidgetAccount.allAccounts.first!)
+    AccountEntry(date: .now, widgetAccount: WidgetAccount.allAccounts().first)
+    AccountEntry(date: .now, widgetAccount: nil)
 }

@@ -55,7 +55,7 @@ struct AllAccountsWidgetEntryView: View {
                                     .font(.body)
                                     .lineLimit(1)
                                 Spacer()
-                                Text("$\(account.balance, specifier: "%.2f")")
+                                Text("\(account.balance, specifier: "%.2f") $")
                                     .font(.body)
                                     .multilineTextAlignment(.trailing)
                             }
